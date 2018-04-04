@@ -1,0 +1,24 @@
+{
+    "name": "lambdasolutions/block_zoola",
+    "description": "Zoola Analytics block plugin for Moodle",
+    "homepage": "https://www.zoola.io",
+    "keywords": ["zoola", "moodle", "reporting", "analytics"],
+    "type": "moodle-block",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Branko Vukasovic",
+            "email": "branko.vukasovic@lambdasolutions.net"
+        }
+    ],
+    "extra": {
+        "installer-name": "zoola"
+    },
+    "require": {
+        "composer/installers": "~1.0",
+        "segmentio/analytics-php": "^1.5"
+    },
+    "support": {
+        "email": "support@lambdasolutions.net"
+    }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/zoola/db" VERSION="20171215" COMMENT="XMLDB file for Moodle blocks/zoola"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="block_zoola_module_name" COMMENT="Module names">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="coursemoduleid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Course module id"/>
+        <FIELD NAME="moduletype" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false" COMMENT="Module type (lesson, quiz, ...)"/>
+        <FIELD NAME="instanceid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Instance id"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="Module name"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="course_modules" TYPE="foreign-unique" FIELDS="coursemoduleid" REFTABLE="course_modules" REFFIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="moduleinstance" UNIQUE="true" FIELDS="moduletype, instanceid" COMMENT="Module type and instance id must be unique"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>
